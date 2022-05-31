@@ -62,12 +62,15 @@ class Bola {
             this.vx = -this.vx;
         }
 
-        for (let i = 0; i < joc.mur.totxos.lenght; i++) { 
-            this.xocToxoo(joc.mur.totxos[i]);
+        for (let i = 0; i < joc.mur.totxos.length; i++) {
+            if (this.xocTotxo(joc.mur.totxos[i], trajectoria)) xoc = true;
         }
+
+        this.xocTotxo(joc.totxo);
     }
 
-    xocTotxo(totxo) {
+    xocTotxo(totxo, trajectoria) {
+        let xoc = false;
         //Xoc amb un totxo
         let xocTotxo = this.interseccioSegmentRectangle(trajectoria, {
             posicio: { x: totxo.posicio.x - this.radi, y: totxo.posicio.y - this.radi },
@@ -93,7 +96,10 @@ class Bola {
         if (!xoc) {
             this.posicio.x = trajectoria.puntB.x;
             this.posicio.y = trajectoria.puntB.y;
-        }    
+        }
+
+        console.log(xoc);
+        return xoc;
     }
 
     interseccioSegmentRectangle(segment, rectangle){
