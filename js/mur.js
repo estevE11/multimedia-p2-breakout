@@ -47,13 +47,13 @@ class Mur {
         let totxos = this.nivells[n].totxos;
         let cols = totxos[0].length;
         let rows = totxos.length;
-        let tW = this.canvasW / cols - padding*2;
-        let tH = 20 - padding*2;
+        let tW = this.canvasW / cols;
+        let tH = 20;
 
         for (let y = 0; y < rows; y++) { 
             for (let x = 0; x < cols; x++) {
                 if (totxos[y].charAt(x) == "a") {
-                    this.totxos.push(new Totxo(new Punt(x*tW + padding, y*tH + padding), tW, tH, color));
+                    this.totxos.push(new Totxo(new Punt(x*tW + padding, y*tH + padding), tW-padding*2, tH-padding*2, color));
                 }
             }
         }

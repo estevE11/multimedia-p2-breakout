@@ -12,8 +12,6 @@ class Totxo{
         ctx.save();
         ctx.fillStyle = this.color;
         ctx.fillRect(this.posicio.x, this.posicio.y, this.amplada, this.alcada);
-        ctx.fillStyle = 'red';
-        ctx.fillRect(this.posicio.x, this.posicio.y, 5, 5);
         ctx.restore();
 
     }
