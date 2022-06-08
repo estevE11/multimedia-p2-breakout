@@ -66,29 +66,10 @@ class Bola {
         //Xoc amb un totxo
         let  totxoTocat = null;
 
-        joc.mur.totxos.forEach((totxo) => {     
-            let xocTotxo = this.interseccioSegmentRectangle(trajectoria, {
-                posicio: { x: totxo.posicio.x - this.radi, y: totxo.posicio.y - this.radi },
-                amplada: totxo.amplada + 2 * this.radi,
-                alcada: totxo.alcada + 2 * this.radi
-            });
-    
-            if (xocTotxo) {
-                xoc = true;
-                this.posicio.x = xocTotxo.pI.x;
-                this.posicio.y = xocTotxo.pI.y;
-                switch (xocTotxo.vora) {
-                    case "superior":
-                    case "inferior": this.vy = -this.vy;
-                        break;
-                    case "esquerra":
-                    case "dreta": this.vx = -this.vx;
-                        break;
-                }
-                
-                totxoTocat = totxo;
-            }
-    
+        joc.mur.totxos.forEach((totxo) => {
+            if (xoc) return;
+            xoc = this.xocTotxo(totxo, trajectoria);
+            if (xoc) totxoTocat = totxo;
         });
 
         if (!xoc) {
@@ -102,7 +83,7 @@ class Bola {
     }
 
     xocTotxo(totxo, trajectoria) {
-        let xoc = false;
+        let x = false;
         //Xoc amb un totxo
         let xocTotxo = this.interseccioSegmentRectangle(trajectoria, {
             posicio: { x: totxo.posicio.x - this.radi, y: totxo.posicio.y - this.radi },
@@ -111,7 +92,7 @@ class Bola {
         });
 
         if (xocTotxo) {
-            xoc = true;
+            x = true;
             this.posicio.x = xocTotxo.pI.x;
             this.posicio.y = xocTotxo.pI.y;
             switch (xocTotxo.vora) {
@@ -122,16 +103,9 @@ class Bola {
                 case "dreta": this.vx = -this.vx;
                     break;
             }
-
         }
 
-        if (!xoc) {
-            this.posicio.x = trajectoria.puntB.x;
-            this.posicio.y = trajectoria.puntB.y;
-        }
-
-        console.log(xoc);
-        return xoc;
+        return x;
     }
 
     interseccioSegmentRectangle(segment, rectangle) {
