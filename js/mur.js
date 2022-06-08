@@ -48,7 +48,7 @@ class Mur {
         let cols = totxos[0].length;
         let rows = totxos.length;
         let tW = this.canvasW / cols;
-        let tH = 20;
+        let tH = 25;
 
         for (let y = 0; y < rows; y++) { 
             for (let x = 0; x < cols; x++) {
@@ -63,5 +63,11 @@ class Mur {
         for (let i = 0; i < this.totxos.length; i++) { 
             this.totxos[i].draw(ctx);
         }
+    }
+
+    eliminarTotxo(totxo) { 
+        this.totxos = this.totxos.filter(function (it) {
+            return it != totxo;
+        });
     }
 }
