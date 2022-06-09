@@ -9,6 +9,7 @@ class Pala {
         this.canvas = canvas;
         this.shoot = false;
         this.joc = joc;
+        this.shootA = 0;
     }
 
 
@@ -35,6 +36,11 @@ class Pala {
         ctx.fillRect(this.posicio.x, this.posicio.y, this.amplada, this.alcada);
         ctx.restore();
 
+        // Dibuixar linia per apuntar
+/*        ctx.beginPath();
+        ctx.moveTo(this.posicio.x, this.posicio.y);
+        ctx.lineTo(300, 150);
+        ctx.stroke();*/
     }
     mou(x, y) {
         this.posicio.x += x;

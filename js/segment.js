@@ -61,10 +61,13 @@ class Segment{
     	// funció interna
 	valorDinsInterval(a, b, c) {  
         // retorna cert si b està entre a i c, ambdos exclosos
-        if (Math.abs(a-b) < 0.000001 || Math.abs(b-c) < 0.000001) { // no podem fer a==b amb valors reals!!
+        /*
+        if (Math.abs(a - b) < 0.000001 || Math.abs(b - c) < 0.000001) { // no podem fer a==b amb valors reals!!
             return false;
         }
         return (a < b && b < c) || (c < b && b < a);
+        */
+        return (a < b && b < c) || (c < b && b < a) || Math.abs(a - b) < 0.000001 || Math.abs(b - c) < 0.000001;
     }
 }
     
