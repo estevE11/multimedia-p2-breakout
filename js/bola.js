@@ -19,6 +19,12 @@ class Bola {
         this.posicio.x += x;
         this.posicio.y += y;
     }
+
+    setVelocitat(x, y) { 
+        this.vx = x;
+        this.vy = y;
+    }
+
     update() {
 
         let puntActual = this.posicio;
@@ -29,14 +35,22 @@ class Bola {
         let xoc = false;
 
         //Xoc amb les cantonades del canvas
-        if (trajectoria.puntB.y + this.radi > joc.alcada) {
+        if (trajectoria.puntB.y - this.radi > joc.alcada) {
+            this.vx = 0;
+            this.vy = 0;
+            this.pala.resetPosicio();
+            this.posicio.x = 150;
+            this.posicio.y = this.pala.posicio.y - this.radi - 1.5;
+            return;
+            /*
             exces = (trajectoria.puntB.y + this.radi - joc.alcada) / this.vy;
             this.posicio.x = trajectoria.puntB.x - exces * this.vx;
             this.posicio.y = joc.alcada - this.radi;
             xoc = true;
             this.vy = -this.vy;
-
+            */
         }
+
         if (trajectoria.puntB.y - this.radi < 0) {
             exces = (trajectoria.puntB.y - this.radi) / this.vy;
             this.posicio.x = trajectoria.puntB.x - exces * this.vx;
