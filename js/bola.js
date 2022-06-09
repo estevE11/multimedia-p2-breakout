@@ -1,11 +1,11 @@
 class Bola {
-    constructor(puntPosicio, radi) {
+    constructor(puntPosicio, radi, pala) {
         this.radi = radi;
         this.posicio = puntPosicio;
         this.vx = 1;
         this.vy = 3;
         this.color = "#0095DD";
-
+        this.pala = pala;
     };
 
     draw(ctx) {
@@ -72,6 +72,8 @@ class Bola {
             if (xoc) totxoTocat = totxo;
         });
 
+        if (!xoc) xoc = this.xocPala(trajectoria);
+
         if (!xoc) {
             this.posicio.x = trajectoria.puntB.x;
             this.posicio.y = trajectoria.puntB.y;
@@ -96,6 +98,32 @@ class Bola {
             this.posicio.x = xocTotxo.pI.x;
             this.posicio.y = xocTotxo.pI.y;
             switch (xocTotxo.vora) {
+                case "superior":
+                case "inferior": this.vy = -this.vy;
+                    break;
+                case "esquerra":
+                case "dreta": this.vx = -this.vx;
+                    break;
+            }
+        }
+
+        return x;
+    }
+
+    xocPala(trajectoria) {
+        let x = false;
+        //Xoc amb un totxo
+        let xocPala = this.interseccioSegmentRectangle(trajectoria, {
+            posicio: { x: this.pala.posicio.x - this.radi, y: this.pala.posicio.y - this.radi },
+            amplada: this.pala.amplada + 2 * this.radi,
+            alcada: this.pala.alcada + 2 * this.radi
+        });
+
+        if (xocPala) {
+            x = true;
+            this.posicio.x = xocPala.pI.x;
+            this.posicio.y = xocPala.pI.y;
+            switch (xocPala.vora) {
                 case "superior":
                 case "inferior": this.vy = -this.vy;
                     break;
