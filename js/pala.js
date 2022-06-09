@@ -9,7 +9,7 @@ class Pala {
         this.canvas = canvas;
         this.shoot = false;
         this.joc = joc;
-        this.shootA = 0;
+        this.shootA = -Math.PI/2;
     }
 
 
@@ -24,8 +24,16 @@ class Pala {
                 }
         } else { 
             if (joc.key.SPACE.pressed) {
-                this.joc.dispararBola(1, -1);
+                this.joc.dispararBola(Math.cos(this.shootA) * 2, Math.sin(this.shootA) * 2);
             }                 
+            if (joc.key.RIGHT.pressed) {
+                this.shootA += 0.05;
+            } else
+                if (joc.key.LEFT.pressed) {
+                    this.shootA -= 0.05;
+                }
+            if (this.shootA < -Math.PI / 2 - Math.PI / 4) this.shootA = -Math.PI / 2 - Math.PI / 4;
+            if (this.shootA > 0 - Math.PI / 4) this.shootA = 0 - Math.PI / 4;
         }
     }
 
@@ -37,10 +45,12 @@ class Pala {
         ctx.restore();
 
         // Dibuixar linia per apuntar
-/*        ctx.beginPath();
-        ctx.moveTo(this.posicio.x, this.posicio.y);
-        ctx.lineTo(300, 150);
-        ctx.stroke();*/
+        if (this.shoot) {            
+            ctx.beginPath();
+            ctx.moveTo(this.posicio.x + this.amplada/2, this.posicio.y - 4);
+            ctx.lineTo((this.posicio.x + this.amplada / 2) + Math.cos(this.shootA)*20, (this.posicio.y - 2) + Math.sin(this.shootA)*20);
+            ctx.stroke();
+        }
     }
     mou(x, y) {
         this.posicio.x += x;
