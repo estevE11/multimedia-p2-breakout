@@ -93,8 +93,9 @@ class Bola {
         if (!xoc) {
             this.posicio.x = trajectoria.puntB.x;
             this.posicio.y = trajectoria.puntB.y;
-        } else {
+        } else if(totxoTocat) {
             joc.mur.eliminarTotxo(totxoTocat);
+            this.joc.score += 50;
         }
 
 
