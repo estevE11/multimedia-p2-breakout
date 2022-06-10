@@ -1,5 +1,4 @@
 - Tria nivell
-- Vidas
 - Animacions?
 - Sonido
 - HUD

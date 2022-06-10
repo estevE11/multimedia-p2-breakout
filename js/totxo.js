@@ -13,8 +13,8 @@ class Totxo{
         ctx.fillStyle = this.color;
         ctx.fillRect(this.posicio.x, this.posicio.y, this.amplada, this.alcada);
         ctx.restore();
-
     }
+    
     puntInteriorRectangle(punt){
         return (punt.x >= this.posicio.x &&
             punt.x <= this.posicio.x + this.amplada) &&

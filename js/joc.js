@@ -16,6 +16,8 @@ class Joc {
         this.mur = new Mur(this.amplada, this.alcada);
         this.mur.changeLevel(0);
 
+        this.display = new Display(this);
+
         this.key = {
             LEFT: { code: 37, pressed: false },
             RIGHT: { code: 39, pressed: false },
@@ -32,7 +34,7 @@ class Joc {
         this.bola.draw(this.ctx);
         //this.totxo.draw(this.ctx);
         this.mur.draw(this.ctx);
-
+        this.display.draw(this.ctx);
     }
     clearCanvas() {
         this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height)
