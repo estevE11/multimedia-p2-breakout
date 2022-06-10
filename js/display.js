@@ -12,7 +12,8 @@ class Display {
             ctx.fillRect(5 + i * 10, this.joc.canvas.height - 15, 5, 10);
         
         ctx.fillStyle = 'black';
-        ctx.fillText("Score: " + this.joc.score, 10, 15);
+        ctx.fillText("Puntuació: " + this.joc.score, 10, 15);
+        ctx.fillText("Record: " + this.joc.hiscore, 10, 25);
         
         ctx.restore();
     }

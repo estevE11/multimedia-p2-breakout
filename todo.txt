@@ -4,6 +4,4 @@
 - HUD
 - Main menu
 - Imagenes to guapas (fondo)
-- Puntuacion
-- Guardar Puntuacion
 - Ranking con nombre

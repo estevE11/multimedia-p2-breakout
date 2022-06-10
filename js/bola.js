@@ -96,6 +96,11 @@ class Bola {
         } else if(totxoTocat) {
             joc.mur.eliminarTotxo(totxoTocat);
             this.joc.score += 50;
+            if (this.joc.score > this.joc.hiscore) { 
+                this.joc.hiscore = this.joc.score;
+                localStorage['hiscore'] = this.joc.score;
+            }
+
         }
 
 
