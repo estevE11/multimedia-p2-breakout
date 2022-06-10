@@ -1,11 +1,12 @@
 class Bola {
-    constructor(puntPosicio, radi, pala) {
+    constructor(puntPosicio, radi, pala, joc) {
         this.radi = radi;
         this.posicio = puntPosicio;
         this.vx = 1;
         this.vy = 3;
         this.color = "#0095DD";
         this.pala = pala;
+        this.joc = joc;
     };
 
     draw(ctx) {
@@ -41,6 +42,7 @@ class Bola {
             this.pala.resetPosicio();
             this.posicio.x = 150;
             this.posicio.y = this.pala.posicio.y - this.radi - 1.5;
+            this.joc.vides--;
             return;
             /*
             exces = (trajectoria.puntB.y + this.radi - joc.alcada) / this.vy;
