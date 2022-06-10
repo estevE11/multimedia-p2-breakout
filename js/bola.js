@@ -139,7 +139,10 @@ class Bola {
             this.posicio.y = xocPala.pI.y;
             switch (xocPala.vora) {
                 case "superior":
-                case "inferior": this.vy = -this.vy;
+                case "inferior":
+                    let distToCenter = this.pala.posicio.x + this.pala.amplada/2 - this.posicio.x;
+                    this.vy = -this.vy;
+                    this.vx = -1*distToCenter / 8;
                     break;
                 case "esquerra":
                 case "dreta": this.vx = -this.vx;
