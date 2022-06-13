@@ -1,7 +1,7 @@
 - Tria nivell
 - Animacions?
-- Sonido
 - HUD
 - Main menu
 - Imagenes to guapas (fondo)
 - Ranking con nombre
+- Mutear sonido

@@ -46,3 +46,17 @@
 	height: 200px;
 	border-radius:25px;
 }
+
+.lbl_mute {
+	user-select: none;
+	cursor: pointer;
+}
+
+label[for="check_mute"]:after {
+	font-size: 40px;
+	content: '🔊';
+}
+
+#check_mute:checked + label[for="check_mute"]:after {
+	content:'🔇';
+}
