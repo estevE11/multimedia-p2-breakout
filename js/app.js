@@ -7,9 +7,11 @@ $(document).ready(function() {
     joc.velocitat=1;
     joc.inicialitza();
   
+    $('#check_mute').prop('checked', true);
     $('#check_mute').change(function () {
         const muted = $('#check_mute').is(':checked');
         setMute(muted);
+        localStorage['mute'] = muted;
     });
 });
 
@@ -24,4 +26,10 @@ function setMute(val) {
 function animacio() {
     joc.update();
     requestAnimationFrame(animacio);
+}
+
+function playSound(sound) { 
+    const muted = $('#check_mute').is(':checked');
+    if(!muted) 
+        document.getElementById("sound_" + sound).play();
 }

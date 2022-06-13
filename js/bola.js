@@ -43,7 +43,7 @@ class Bola {
             this.posicio.x = 150;
             this.posicio.y = this.pala.posicio.y - this.radi - 1.5;
             this.joc.vides--;
-            document.getElementById("sound_life").play();
+            playSound('life');
             return;
             /*
             exces = (trajectoria.puntB.y + this.radi - joc.alcada) / this.vy;
@@ -60,7 +60,7 @@ class Bola {
             this.posicio.y = this.radi;
             xoc = true;
             this.vy = -this.vy;
-            document.getElementById("sound_hit").play();
+            playSound('hit');
         }
 
         if (trajectoria.puntB.x + this.radi > joc.amplada) {
@@ -69,7 +69,7 @@ class Bola {
             this.posicio.y = trajectoria.puntB.y - exces * this.vy;
             xoc = true;
             this.vx = -this.vx;
-            document.getElementById("sound_hit").play();
+            playSound('hit');
         }
 
         if (trajectoria.puntB.x - this.radi < 0) {
@@ -78,7 +78,7 @@ class Bola {
             this.posicio.y = trajectoria.puntB.y - exces * this.vy;
             xoc = true;
             this.vx = -this.vx;
-            document.getElementById("sound_hit").play();
+            playSound('hit');
         }
 
         
@@ -159,7 +159,7 @@ class Bola {
                 case "dreta": this.vx = -this.vx;
                     break;
             }
-            document.getElementById("sound_hit").play();
+            playSound('hit');
         }
 
         return x;
