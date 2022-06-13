@@ -4,7 +4,7 @@ class Pala {
         this.alcada = alcada;
         this.posicio = puntPosicio;
         this.vy = 2;     
-        this.vx = 2;               
+        this.vx = 3.5;             
         this.color = "#fbb"; 
         this.canvas = canvas;
         this.shoot = false;
