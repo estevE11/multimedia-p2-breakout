@@ -16,7 +16,6 @@ class Joc {
         this.bola = new Bola(new Punt(this.canvas.width / 2, this.canvas.height / 2), 3, this.pala, this);
         this.totxo = new Totxo(new Punt((this.canvas.width - 120) / 2, (this.canvas.height - 20) / 3), 120, 20, "#0ad");  // només posem un totxo gegant, per veure els xocs
         this.mur = new Mur(this.amplada, this.alcada);
-        this.mur.changeLevel(1);
 
         this.display = new Display(this);
 
@@ -48,7 +47,7 @@ class Joc {
     }
 
     inicialitza() {
-
+        this.mur.changeLevel($('#sel_level').val());
         this.pala.draw(this.ctx);
         $(document).on("keydown", { joc: this }, function (e) {
             if (e.keyCode == e.data.joc.key.LEFT.code) {

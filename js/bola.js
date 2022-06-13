@@ -2,11 +2,12 @@ class Bola {
     constructor(puntPosicio, radi, pala, joc) {
         this.radi = radi;
         this.posicio = puntPosicio;
-        this.vx = 1;
-        this.vy = 3;
+        this.vx = 0;
+        this.vy = 0;
         this.color = "#0095DD";
         this.pala = pala;
         this.joc = joc;
+        this.resetPosicio();
     };
 
     draw(ctx) {
@@ -40,8 +41,7 @@ class Bola {
             this.vx = 0;
             this.vy = 0;
             this.pala.resetPosicio();
-            this.posicio.x = 150;
-            this.posicio.y = this.pala.posicio.y - this.radi - 1.5;
+            this.resetPosicio();
             this.joc.vides--;
             playSound('life');
             return;
@@ -107,6 +107,11 @@ class Bola {
         }
 
 
+    }
+
+    resetPosicio() { 
+        this.posicio.x = 150;
+        this.posicio.y = this.pala.posicio.y - this.radi - 1.5;
     }
 
     xocTotxo(totxo, trajectoria) {

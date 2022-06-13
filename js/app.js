@@ -1,11 +1,11 @@
-$(document).ready(function() {
+$(document).ready(function () {
 
     let myCanvas = document.getElementById("joc");
     let ctx = myCanvas.getContext("2d");
 
-    joc = new Joc(myCanvas,ctx);
-    joc.velocitat=1;
-    joc.inicialitza();
+    joc = new Joc(myCanvas, ctx);
+    joc.velocitat = 1;
+    ///joc.inicialitza();
   
     $('#check_mute').prop('checked', true);
     $('#check_mute').change(function () {
@@ -13,6 +13,12 @@ $(document).ready(function() {
         setMute(muted);
         localStorage['mute'] = muted;
     });
+
+    $('#play').click(function () {
+        $('#mainmenu').hide();
+        $('#principal').show();
+        joc.inicialitza();
+     });
 });
 
 function setMute(val) { 

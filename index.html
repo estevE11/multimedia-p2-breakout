@@ -8,11 +8,22 @@
     </head>
 <html>
 <body>
-    <div id="principal">
-      
+    <div id="mainmenu">
+        <img src="img/logo.jpg" alt="">
+        <button id="play">JUGAR</button>
+        <select name="sel_level" id="sel_level">
+            <option value="0">1 - Basic</option>
+            <option value="1">2 - Piramide</option>
+            <option value="2">3 - Aranya</option>
+        </select>
+    </div>
+    <div hidden id="principal">
             <canvas id="joc"></canvas>
             <input hidden type="checkbox" name="check_mute" id="check_mute">
             <label class="lbl_mute" for="check_mute"></label>
+            <h2>Controls: </h2>
+            <h3>&lt;Espai&gt; per llançar la pilota</h3>
+            <h3>&lt;Fletxes de direcció&gt; per moure la pala</h3>
     </div>
 </body>
 

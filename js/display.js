@@ -7,10 +7,11 @@ class Display {
         ctx.save();
 
         // contador de vides
-        ctx.fillStyle = 'red';
+        let vides = "";
         for (let i = 0; i < this.joc.vides; i++)
-            ctx.fillRect(5 + i * 10, this.joc.canvas.height - 15, 5, 10);
-        
+            vides += '❤️';
+        ctx.fillText(vides, 10, 140);
+            
         ctx.fillStyle = 'black';
         ctx.fillText("Puntuació: " + this.joc.score, 10, 15);
         ctx.fillText("Record: " + this.joc.hiscore, 10, 25);

@@ -7,7 +7,7 @@ class Pala {
         this.vx = 3.5;             
         this.color = "#fbb"; 
         this.canvas = canvas;
-        this.shoot = false;
+        this.shoot = true;
         this.joc = joc;
         this.shootA = -Math.PI/2;
     }
