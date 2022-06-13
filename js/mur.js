@@ -69,5 +69,6 @@ class Mur {
         this.totxos = this.totxos.filter(function (it) {
             return it != totxo;
         });
+        document.getElementById("sound_brick").play();
     }
 }
