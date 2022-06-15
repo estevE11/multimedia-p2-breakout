@@ -75,6 +75,8 @@ label[for="check_mute"]:after {
 }
 
 #mainmenu > * {
+	display: block;
+	margin: 0 auto;
 }
 
 #mainmenu > #play {
@@ -95,9 +97,13 @@ label[for="check_mute"]:after {
 	color: rgb(126, 126, 221);
 }
 
-
-#mainmenu > #sel_level {
+.lvl-selector {
 	width: 200px;
+	margin-bottom: 10px !important;
+}
+
+#sel_level {
+	width: 100%;
 	height: 30px;
 	background-color: rgb(26, 25, 25);
 	color: white;

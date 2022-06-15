@@ -10,12 +10,16 @@
 <body>
     <div id="mainmenu">
         <img src="img/logo.jpg" alt="">
-        <button id="play">JUGAR</button>
-        <select name="sel_level" id="sel_level">
-            <option value="0">1 - Basic</option>
-            <option value="1">2 - Piramide</option>
-            <option value="2">3 - Aranya</option>
-        </select>
+        <br>
+        <div class="lvl-selector">
+            <label for="sel_level">Level:</label>
+            <select name="sel_level" id="sel_level">
+                <option value="0">1 - Basic</option>
+                <option disabled value="1">2 - Piramide</option>
+                <option disabled value="2">3 - Aranya</option>
+            </select>
+        </div>
+        <button id="play">JUGAR</button><br>
     </div>
     <div hidden id="principal">
             <canvas id="joc"></canvas>

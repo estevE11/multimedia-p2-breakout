@@ -15,6 +15,7 @@ $(document).ready(function () {
     });
 
     $('#play').click(function () {
+        joc.username = prompt("Nom d'usuari");
         $('#mainmenu').hide();
         $('#principal').show();
         joc.inicialitza();
