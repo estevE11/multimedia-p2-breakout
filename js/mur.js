@@ -1,7 +1,9 @@
 class Mur {
-    constructor(canvasW, canvasH) {
+    constructor(canvasW, canvasH, joc) {
         this.canvasW = canvasW;
         this.canvasH = canvasH;
+
+        this.joc = joc;
 
         this.currentLevel = 0;
 
@@ -65,7 +67,7 @@ class Mur {
     nextLevel() { 
         console.log(parseInt(this.currentLevel) + 1, this.nivells.length);
         if (parseInt(this.currentLevel) + 1 == this.nivells.length) { 
-            console.log('caca');
+            localStorage['hiscore'] = this.joc.score;
             return;
         }
         this.currentLevel++;
