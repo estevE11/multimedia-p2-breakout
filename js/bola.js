@@ -103,6 +103,11 @@ class Bola {
                 this.joc.hiscore = this.joc.score;
                 localStorage['hiscore'] = this.joc.score;
             }
+            if (this.joc.mur.totxos.length == 0) { 
+                this.joc.mur.nextLevel();
+                this.joc.bola.resetPosicio();
+                this.joc.pala.resetPosicio();
+            }
 
         }
 
@@ -112,6 +117,8 @@ class Bola {
     resetPosicio() { 
         this.posicio.x = 150;
         this.posicio.y = this.pala.posicio.y - this.radi - 1.5;
+        this.vx = 0;
+        this.vy = 0;
     }
 
     xocTotxo(totxo, trajectoria) {

@@ -3,6 +3,8 @@ class Mur {
         this.canvasW = canvasW;
         this.canvasH = canvasH;
 
+        this.currentLevel = 0;
+
         this.totxos = [];
         this.nivells = [];
         this.defineixNivells();
@@ -41,6 +43,7 @@ class Mur {
     }
 
     changeLevel(n) { 
+        this.currentLevel = n;
         let padding = 5;
 
         let color = this.nivells[n].color;
@@ -57,6 +60,16 @@ class Mur {
                 }
             }
         }
+    }
+
+    nextLevel() { 
+        console.log(parseInt(this.currentLevel) + 1, this.nivells.length);
+        if (parseInt(this.currentLevel) + 1 == this.nivells.length) { 
+            console.log('caca');
+            return;
+        }
+        this.currentLevel++;
+        this.changeLevel(this.currentLevel);
     }
 
     draw(ctx) { 
