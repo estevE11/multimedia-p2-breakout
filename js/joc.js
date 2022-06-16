@@ -55,6 +55,7 @@ class Joc {
     }
 
     inicialitza() {
+        this.pala.responsive = true;
         this.score = 0;
         this.vides = 4;
         this.mur.changeLevel($('#sel_level').val());

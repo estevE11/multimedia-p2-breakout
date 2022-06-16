@@ -10,7 +10,7 @@ class Pala {
         this.shoot = true;
         this.joc = joc;
         this.shootA = -Math.PI / 2;
-        this.responsive = false;
+        this.responsive = true;
     }
 
 
