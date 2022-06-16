@@ -69,6 +69,7 @@ class Mur {
         if (parseInt(this.currentLevel) + 1 == this.nivells.length) { 
             this.joc.saveScore();
             $('.victory').show();
+            updateRanking();
             return;
         }
         this.currentLevel++;

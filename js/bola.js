@@ -46,6 +46,7 @@ class Bola {
             playSound('life');
             if (this.joc.vides <= 0) { 
                 $('.loss').show();
+                updateRanking();
             }
             return;
             /*

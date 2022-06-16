@@ -9,11 +9,13 @@ class Pala {
         this.canvas = canvas;
         this.shoot = true;
         this.joc = joc;
-        this.shootA = -Math.PI/2;
+        this.shootA = -Math.PI / 2;
+        this.responsive = false;
     }
 
 
-    update(){
+    update() {
+        if (!this.responsive) return;
         if (!this.shoot) {
             if (joc.key.RIGHT.pressed) {
                 this.posicio.x = Math.min(joc.amplada - this.amplada,
