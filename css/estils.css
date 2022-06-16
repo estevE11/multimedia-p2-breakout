@@ -109,3 +109,39 @@ label[for="check_mute"]:after {
 	color: white;
 	border-color: rgb(26, 25, 25);
 }
+
+.modal {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+}
+
+.modal-bg {
+	width: 100%;
+	height: 100%;
+	opacity: .3;
+}
+
+.modal-content {
+	background-color: darkcyan;
+	width: 200px;
+	padding: 5px 10px 20px 10px;
+	color: white;
+	border-radius: 20px;
+	position: absolute;
+	top: 20%;
+	left: 50%;
+	transform: translateX(-50%);
+}
+
+.victory .modal-bg,
+.modal-content {
+	background-color: darkcyan;
+}
+
+.loss .modal-bg,
+.loss .modal-content {
+	background-color: red;
+}

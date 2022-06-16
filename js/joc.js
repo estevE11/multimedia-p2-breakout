@@ -55,6 +55,8 @@ class Joc {
     }
 
     inicialitza() {
+        this.score = 0;
+        this.vides = 4;
         this.mur.changeLevel($('#sel_level').val());
         this.pala.draw(this.ctx);
         $(document).on("keydown", { joc: this }, function (e) {

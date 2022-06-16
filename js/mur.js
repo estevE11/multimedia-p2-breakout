@@ -68,6 +68,7 @@ class Mur {
         console.log(parseInt(this.currentLevel) + 1, this.nivells.length);
         if (parseInt(this.currentLevel) + 1 == this.nivells.length) { 
             this.joc.saveScore();
+            $('.victory').show();
             return;
         }
         this.currentLevel++;

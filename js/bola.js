@@ -44,6 +44,9 @@ class Bola {
             this.resetPosicio();
             this.joc.vides--;
             playSound('life');
+            if (this.joc.vides <= 0) { 
+                $('.loss').show();
+            }
             return;
             /*
             exces = (trajectoria.puntB.y + this.radi - joc.alcada) / this.vy;

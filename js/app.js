@@ -19,7 +19,13 @@ $(document).ready(function () {
         $('#mainmenu').hide();
         $('#principal').show();
         joc.inicialitza();
-     });
+    });
+    
+    $('.btn-menu').click(function () { 
+        $('.modal').hide();
+        $('#principal').hide();
+        $('#mainmenu').show();
+    });
 });
 
 function setMute(val) { 
