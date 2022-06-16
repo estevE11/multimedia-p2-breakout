@@ -43,6 +43,7 @@ class Bola {
             this.pala.resetPosicio();
             this.resetPosicio();
             this.joc.vides--;
+            this.joc.score -= 100;
             playSound('life');
             if (this.joc.vides <= 0) { 
                 $('.loss').show();
