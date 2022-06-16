@@ -98,11 +98,7 @@ class Bola {
             this.posicio.y = trajectoria.puntB.y;
         } else if(totxoTocat) {
             joc.mur.eliminarTotxo(totxoTocat);
-            this.joc.score += 50;
-            if (this.joc.score > this.joc.hiscore) { 
-                this.joc.hiscore = this.joc.score;
-                localStorage['hiscore'] = this.joc.score;
-            }
+            joc.addScore(50);
             if (this.joc.mur.totxos.length == 0) { 
                 this.joc.mur.nextLevel();
                 this.joc.bola.resetPosicio();

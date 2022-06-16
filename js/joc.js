@@ -10,7 +10,13 @@ class Joc {
 
         this.vides = 4;
         this.score = 0;
-        this.hiscore = localStorage['hiscore'] | 0;
+        this.scores = 0;//JSON.parse(!localStorage['scores'] ? localStorage['scores'] : '{}');
+        let val = localStorage['scores'];
+        if (!val) {
+            this.scores = {};
+        } else { 
+            this.scores = JSON.parse(val);
+        }
 
         this.username = "";
 
@@ -76,6 +82,25 @@ class Joc {
 
 
         requestAnimationFrame(animacio);
+    }
+
+    setUsername(username) { 
+        this.username = username;
+        this.hiscore = this.scores[this.username] | 0;
+        this.hiscore = this.scores[this.username] ? this.scores[this.username] : 0;
+    }
+
+    addScore(n) { 
+        this.score += n;
+        if (this.hiscore < this.score) {
+            this.hiscore = this.score;
+            this.saveScore();
+        }
+    }
+
+    saveScore() { 
+        this.scores[this.username] = this.hiscore;
+        localStorage['scores'] = JSON.stringify(this.scores);
     }
 
     update() {

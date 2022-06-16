@@ -67,7 +67,7 @@ class Mur {
     nextLevel() { 
         console.log(parseInt(this.currentLevel) + 1, this.nivells.length);
         if (parseInt(this.currentLevel) + 1 == this.nivells.length) { 
-            localStorage['hiscore'] = this.joc.score;
+            this.joc.saveScore();
             return;
         }
         this.currentLevel++;
