@@ -8,7 +8,7 @@ class Joc {
         this.totxoalcada = 20; // MIDES DEL TOTXO EN PÍXELS
         this.totxocolor = "#0ad";
 
-        this.vides = 3;
+        this.vides = 4;
         this.score = 0;
         this.hiscore = localStorage['hiscore'] | 0;
 
